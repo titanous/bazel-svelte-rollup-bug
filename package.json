@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@bazel/hide-bazel-files": "^1.7.0",
+    "@bazel/rollup": "^2.0.3",
+    "rollup": "^2.26.5"
+  }
+}

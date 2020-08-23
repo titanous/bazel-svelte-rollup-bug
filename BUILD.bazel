@@ -1,0 +1,25 @@
+load("@build_bazel_rules_svelte//:defs.bzl", "bundle_prod", "svelte")
+load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
+
+svelte(
+    name = "App",
+    srcs = ["main.js"],
+    entry_point = "App.svelte",
+)
+
+bundle_prod(
+    name = "bundle_prod",
+    entry_point = "main.js",
+    deps = [
+        ":App",
+    ],
+)
+
+rollup_bundle(
+    name = "rollup_bundle",
+    config_file = "rollup.config.js",
+    entry_point = "main.js",
+    deps = [
+        ":App",
+    ],
+)
